@@ -1,4 +1,4 @@
-import React from 'react'
+import HelloWorld from './component/HelloWorld'
 
 export default function App() {
 
@@ -6,6 +6,7 @@ export default function App() {
         <>
             <div className="wrap">
                 <h1 className="title">Hello, React18!</h1>
+                <HelloWorld />
             </div>
         </>
     )

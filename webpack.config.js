@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const webpack = require('webpack')
 
 module.exports = {
     name: 'React18-webpack-babel-setting',
@@ -25,6 +26,16 @@ module.exports = {
                 test: /\.css$/i,
                 use: ["style-loader", "css-loader"],
             },
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: 'image/[contenthash].[ext]'
+                    }
+                } 
+                
+            }
         ]
     },
     plugins: [
@@ -35,16 +46,18 @@ module.exports = {
                 minify: true, // 압축 설정
             }
         ),
+        new webpack.ProvidePlugin({
+            "React": "react",
+        }),
     ],
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'app.js'
     },
     devServer: { // 개발 서버 설정
-        static: './dist',
         port: 3000,
         hot: true, // 핫 모듈 교체(HMR) 활성화
         compress: true,
-        open: true,
+        open: true
     }
 }
