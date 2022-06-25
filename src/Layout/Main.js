@@ -1,10 +1,9 @@
-import Box from '@mui/material/Box'
 
 const Main = ({children}) => {
     return(
-        <Box component="main">
+        <main className="main">
             { children }
-        </Box>
+        </main>
     )
 }
 

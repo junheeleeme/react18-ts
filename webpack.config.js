@@ -1,7 +1,9 @@
+const webpack = require('webpack')
 const path = require('path')
+const dotenv = require("dotenv")
+dotenv.config()
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const webpack = require('webpack')
 
 module.exports = {
     name: 'React18-webpack-babel-setting',
@@ -40,9 +42,13 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
+        new webpack.DefinePlugin({
+            "process.env": JSON.stringify(process.env)
+        }),
         new HtmlWebpackPlugin(
             { 
                 template: './public/index.html', // 템플릿 설정
+                title: process.env.TITLE, // 문서 타이틀
                 minify: true, // 압축 설정
             }
         ),
@@ -58,6 +64,7 @@ module.exports = {
         port: 3000,
         hot: true, // 핫 모듈 교체(HMR) 활성화
         compress: true,
-        open: true
+        open: true,
+        historyApiFallback: true,
     }
 }
