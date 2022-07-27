@@ -25,6 +25,8 @@
     "prettier/prettier": ["error", { "endOfLine": "auto" }],
     "import/prefer-default-export": "off",
     "default-param-last": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "import/no-cycle": "off",
+    "import/no-unresolved": "off" // webpack alias
   }
 }

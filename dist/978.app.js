@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkreact18=self.webpackChunkreact18||[]).push([[978],{978:(e,t,n)=>{n.r(t),n.d(t,{default:()=>u});var r=n(294);const u=function(){return r.createElement(r.Fragment,null,"This is About")}}}]);

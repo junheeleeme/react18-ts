@@ -23,6 +23,12 @@ const config = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+    alias: {
+      Api: path.resolve(__dirname, './src/api/'),
+      Utils: path.resolve(__dirname, './src/utils/'),
+      Pages: path.resolve(__dirname, './src/pages/'),
+      Layout: path.resolve(__dirname, './src/layout/'),
+    },
   },
   module: {
     rules: [

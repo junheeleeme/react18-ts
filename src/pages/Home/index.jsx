@@ -1,21 +1,23 @@
 import { useCallback } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { toggleTheme } from '../../store/Actions/actions'
+import { useSelector } from 'react-redux'
+import message from '../../utils/message'
 
 const Home = () => {
   // use Redux
   const { theme } = useSelector((store) => store)
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
   const clickToggle = useCallback(() => {
-    dispatch(toggleTheme())
+    message.warn('성공입니다')
   }, [])
 
   return (
     <section>
       <h2>Redux</h2>
       <h3>Theme : {theme}</h3>
-      <button onClick={clickToggle}>Toggle</button>
+      <button type="button" onClick={clickToggle}>
+        Toggle
+      </button>
     </section>
   )
 }

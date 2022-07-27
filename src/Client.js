@@ -1,6 +1,6 @@
-import Header from './layout/Header'
-import Main from './layout/Main'
-import Footer from './layout/Footer'
+import Header from 'Layout/Header'
+import Main from 'Layout/Main'
+import Footer from 'Layout/Footer'
 
 const Client = () => {
   return (

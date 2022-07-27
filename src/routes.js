@@ -3,17 +3,17 @@ import loadable from '@loadable/component'
 const Home = loadable(() => import('./pages/Home'), {
   fallback: <div>is Loading...</div>,
 })
-const About = loadable(() => import('./pages/About'), {
+const Message = loadable(() => import('./pages/Message'), {
   fallback: <div>is Loading...</div>,
 })
-const Notice = loadable(() => import('./pages/Notice'), {
+const Menu2 = loadable(() => import('./pages/Menu2'), {
   fallback: <div>is Loading...</div>,
 })
 
 const routes = [
   { id: 0, path: '/', title: 'Home', comp: <Home /> },
-  { id: 1, path: '/about', title: 'About', comp: <About /> },
-  { id: 2, path: '/notice', title: 'Notice', comp: <Notice /> },
+  { id: 1, path: '/message', title: 'message', comp: <Message /> },
+  { id: 2, path: '/menu2', title: 'Menu2', comp: <Menu2 /> },
 ]
 
 export default routes
