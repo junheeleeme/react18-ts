@@ -5,7 +5,9 @@ react18_custom_webpack
 ├─ .env.development
 ├─ .env.production
 ├─ .eslintrc
+├─ .gitignore
 ├─ .prettierrc
+├─ dist
 ├─ package-lock.json
 ├─ package.json
 ├─ public
@@ -13,7 +15,8 @@ react18_custom_webpack
 ├─ README.md
 ├─ src
 │  ├─ api
-│  ├─ Client.js
+│  │  └─ HTTP.js
+│  ├─ Client.jsx
 │  ├─ index.js
 │  ├─ layout
 │  │  ├─ Footer
@@ -23,11 +26,19 @@ react18_custom_webpack
 │  │  └─ Main
 │  │     └─ index.jsx
 │  ├─ pages
-│  │  ├─ About
-│  │  │  └─ index.jsx
 │  │  ├─ Home
+│  │  │  ├─ components
 │  │  │  └─ index.jsx
-│  │  └─ Notice
+│  │  ├─ HTTP
+│  │  │  ├─ components
+│  │  │  └─ index.jsx
+│  │  ├─ Menu2
+│  │  │  ├─ components
+│  │  │  └─ index.jsx
+│  │  ├─ Message
+│  │  │  ├─ components
+│  │  │  └─ index.jsx
+│  │  └─ Redux
 │  │     └─ index.jsx
 │  ├─ routes.js
 │  ├─ store
@@ -40,6 +51,9 @@ react18_custom_webpack
 │  ├─ styles
 │  │  └─ style.css
 │  └─ utils
+│     ├─ auth.js
+│     ├─ message.js
+│     └─ request.js
 └─ webpack.config.js
 
 ```
