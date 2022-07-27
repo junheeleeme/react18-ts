@@ -1,0 +1,1 @@
+{"version":3,"file":"978.app.js","mappings":"2IAIA,QAJc,WACZ,OAAO","sources":["webpack://react18/./src/pages/About/index.jsx"],"sourcesContent":["const About = () => {\r\n  return <>This is About</>\r\n}\r\n\r\nexport default About\r\n"],"names":[],"sourceRoot":""}

@@ -1,0 +1,1 @@
+{"version":3,"file":"293.app.js","mappings":"2IAIA,QAJe,WACb,OAAO","sources":["webpack://react18/./src/pages/Notice/index.jsx"],"sourcesContent":["const Notice = () => {\r\n  return <>This is Notice</>\r\n}\r\n\r\nexport default Notice\r\n"],"names":[],"sourceRoot":""}
