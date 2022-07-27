@@ -6,6 +6,7 @@ import { store } from './store/store'
 import Client from './Client'
 import './styles/style.css'
 import 'react-toastify/dist/ReactToastify.css'
+import 'react-confirm-alert/src/react-confirm-alert.css'
 
 const root = document.getElementById('App')
 

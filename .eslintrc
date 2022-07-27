@@ -28,6 +28,7 @@
     "no-console": "off",
     "import/no-cycle": "off",
     "import/no-unresolved": "off", // webpack alias
-    "dot-notation": "off"
+    "dot-notation": "off",
+    "no-alert": "off"
   }
 }
