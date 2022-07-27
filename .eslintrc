@@ -3,7 +3,7 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "extends": ["airbnb", "plugin:prettier/recommended", "prettier"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -27,6 +27,7 @@
     "default-param-last": "off",
     "no-console": "off",
     "import/no-cycle": "off",
-    "import/no-unresolved": "off" // webpack alias
+    "import/no-unresolved": "off", // webpack alias
+    "dot-notation": "off"
   }
 }

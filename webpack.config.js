@@ -26,6 +26,7 @@ const config = {
     alias: {
       Api: path.resolve(__dirname, './src/api/'),
       Utils: path.resolve(__dirname, './src/utils/'),
+      Store: path.resolve(__dirname, './src/store/'),
       Pages: path.resolve(__dirname, './src/pages/'),
       Layout: path.resolve(__dirname, './src/layout/'),
     },
