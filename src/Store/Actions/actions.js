@@ -1,7 +1,7 @@
-import { TOGGLE_THEME } from "../types"
+import { TOGGLE_THEME } from '../types'
 
 // ------------- Actions -------------
 
 export const toggleTheme = () => ({
-    type: TOGGLE_THEME
+  type: TOGGLE_THEME,
 })
