@@ -1,21 +1,33 @@
-import { NavLink, Link } from 'react-router-dom'
-import routes from '../../routes'
+import { Box, Tabs, TabList, Tab } from '@chakra-ui/react'
+
+import { NavLink } from 'react-router-dom'
+import routes from '@/routes'
 
 const Header = () => {
   return (
-    <header className="header">
-      <Link to="/">
-        <h1>Logo</h1>
-      </Link>
-
-      <h1 className="title">
-        {routes.map((p) => (
-          <NavLink to={p.path} key={p.id}>
-            {p.title}
-          </NavLink>
-        ))}
-      </h1>
-    </header>
+    <Box as="header" className="header">
+      <Tabs>
+        <TabList>
+          {routes.map((p) => (
+            <NavLink to={p.path} key={p.id}>
+              <Tab>{p.title}</Tab>
+            </NavLink>
+          ))}
+        </TabList>
+        {/* 
+        <TabPanels>
+          <TabPanel>
+            <p>one!</p>
+          </TabPanel>
+          <TabPanel>
+            <p>two!</p>
+          </TabPanel>
+          <TabPanel>
+            <p>three!</p>
+          </TabPanel>
+        </TabPanels> */}
+      </Tabs>
+    </Box>
   )
 }
 

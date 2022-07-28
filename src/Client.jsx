@@ -1,13 +1,11 @@
-import Header from 'Layout/Header'
-import Main from 'Layout/Main'
-import Footer from 'Layout/Footer'
+import Header from 'layout/Header'
+import Main from 'layout/Main'
 
 const Client = () => {
   return (
     <>
       <Header />
       <Main />
-      <Footer />
     </>
   )
 }

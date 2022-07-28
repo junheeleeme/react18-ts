@@ -1,6 +1,5 @@
 import axios from 'axios'
-import message from 'Utils/message'
-import { getToken } from 'Utils/auth'
+import { getToken } from 'utils/auth'
 
 const service = axios.create({
   baseURL: process.env.API_URL, // url = base url + request url
@@ -44,13 +43,13 @@ service.interceptors.response.use(
       const errData = error.response.data
       // 로그인 세션 만료
       if (errData.status === 401 || errData.error === 'invalid_token') {
-        message.error('로그인 세션 만료')
+        console.log('로그인 세션 만료')
       } else {
         // 이외의 오류
-        message.error('이외의 오류')
+        console.log('이외의 오류')
       }
     } else {
-      message.error('네트워크 오류입니다. 관리자에게 문의해주세요.')
+      console.log('네트워크 오류입니다. 관리자에게 문의해주세요.')
     }
     return Promise.reject(error)
   }

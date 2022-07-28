@@ -1,4 +1,4 @@
-import request from 'Utils/request'
+import request from 'utils/request'
 
 const headers = { 'Content-Type': 'application/json' }
 

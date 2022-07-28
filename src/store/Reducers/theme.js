@@ -1,4 +1,4 @@
-import { TOGGLE_THEME } from '../types'
+import { TOGGLE_THEME } from 'store/types'
 
 const initailState = 'dark'
 

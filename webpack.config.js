@@ -24,11 +24,13 @@ const config = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
-      Api: path.resolve(__dirname, './src/api/'),
-      Utils: path.resolve(__dirname, './src/utils/'),
-      Store: path.resolve(__dirname, './src/store/'),
-      Pages: path.resolve(__dirname, './src/pages/'),
-      Layout: path.resolve(__dirname, './src/layout/'),
+      '@': path.resolve(__dirname, './src/'),
+      api: path.resolve(__dirname, './src/api/'),
+      utils: path.resolve(__dirname, './src/utils/'),
+      common: path.resolve(__dirname, './src/common/'),
+      store: path.resolve(__dirname, './src/store/'),
+      pages: path.resolve(__dirname, './src/pages/'),
+      layout: path.resolve(__dirname, './src/layout/'),
     },
   },
   module: {
