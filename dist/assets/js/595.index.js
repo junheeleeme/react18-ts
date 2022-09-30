@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact18=self.webpackChunkreact18||[]).push([[595],{6595:(e,t,c)=>{c.r(t),c.d(t,{default:()=>s});const a=c.p+"assets/images/b6002ba4b8b7e141d81082492e4c7d16.jpeg";var n=c(7294);const s=function(){return n.createElement("section",null,n.createElement("img",{src:a,alt:"123"}),n.createElement("h2",null,"Home"))}}}]);
