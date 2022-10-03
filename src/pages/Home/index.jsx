@@ -1,9 +1,9 @@
-import laptop from 'images/laptop.jpeg'
+// import laptop from 'images/laptop.jpeg'
 
 const Home = () => {
   return (
     <section>
-      <img src={laptop} alt="123" />
+      <div className="bgTest" />
       <h2>Home</h2>
     </section>
   )

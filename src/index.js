@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import { ChakraProvider } from '@chakra-ui/react'
 import { store } from './store/store'
 import Client from './Client'
-import './styles/style.css'
+import './index.css'
 
 const root = document.getElementById('App')
 
