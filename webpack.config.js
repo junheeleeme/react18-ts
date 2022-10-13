@@ -3,7 +3,6 @@ const webpack = require('webpack')
 const dotenv = require('dotenv')
 const Dotenv = require('dotenv-webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
@@ -28,6 +27,7 @@ const config = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'assets/js/index.js',
     publicPath: '/',
+    clean: true
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -123,7 +123,6 @@ if (isDev) {
   config.plugins.push(new ReactRefreshWebpackPlugin())
 } else {
   // 빌드모드
-  config.plugins.push(new CleanWebpackPlugin())
   config.plugins.push(
     new MiniCssExtractPlugin({
       linkType: false,

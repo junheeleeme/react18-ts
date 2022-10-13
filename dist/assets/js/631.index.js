@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkreact18=self.webpackChunkreact18||[]).push([[631],{5631:(e,t,a)=>{a.r(t),a.d(t,{default:()=>n});var s=a(8527),c=a(7294);const n=function(){return c.createElement(s.xu,{as:"section",p:"10"},c.createElement(s.X6,{as:"h1"},"Message Usage"),c.createElement("br",null))}}}]);
