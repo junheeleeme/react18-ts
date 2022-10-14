@@ -27,7 +27,8 @@ const config = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'assets/js/index.js',
     publicPath: '/',
-    clean: true
+    clean: true,
+    assetModuleFilename: 'assets/images/[name]_[contenthash][ext]',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -49,9 +50,10 @@ const config = {
         test: /\.js/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: require.resolve('babel-loader'),
           options: {
             presets: ['@babel/preset-env', '@babel/preset-react'],
+            plugins: [isDev && require.resolve('react-refresh/babel')].filter(Boolean),
           },
         },
       },
@@ -68,25 +70,29 @@ const config = {
         ],
       },
       // file-loader: 폰트
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: 'assets/fonts/[contenthash].[ext]',
-          },
-        },
-      },
-      // file-loader: 이미지
+      // {
+      //   test: /\.(woff|woff2|eot|ttf|otf)$/,
+      //   use: {
+      //     loader: 'file-loader',
+      //     options: {
+      //       name: 'assets/fonts/[contenthash].[ext]',
+      //     },
+      //   },
+      // },
       {
         test: /\.(png|jpe?g|gif|svg|webp)$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: 'assets/images/[contenthash].[ext]',
-          },
-        },
+        type: 'asset/resource',
       },
+      // file-loader: 이미지
+      // {
+      //   test: /\.(png|jpe?g|gif|svg|webp)$/,
+      //   use: {
+      //     loader: 'file-loader',
+      //     options: {
+      //       name: 'assets/images/[contenthash].[ext]',
+      //     },
+      //   },
+      // },
     ],
   },
   plugins: [
@@ -137,6 +143,7 @@ if (isDev) {
         {
           from: 'public/',
           to: '',
+          noErrorOnMissing: true,
           globOptions: {
             ignore: ['**/*.html', '**/*.js'],
           },

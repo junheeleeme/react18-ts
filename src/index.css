@@ -1,6 +1,19 @@
-.bgTest {
-  border: 1px solid #000;
-  height: 600px;
-  width: 1300px;
-  /* background: url('/static/image/laptop.jpeg') no-repeat center center; */
+section {
+  position: relative;
+}
+
+.spin {
+  width: 300px;
+  height: 300px;
+  margin: 50px;
+  animation: spinAni 10s linear infinite;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+
+
+@keyframes spinAni {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
 }

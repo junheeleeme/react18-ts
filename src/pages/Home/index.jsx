@@ -1,10 +1,10 @@
-// import laptop from 'images/laptop.jpeg'
+import sample from 'images/sample.jpeg'
 
 const Home = () => {
   return (
     <section>
-      <div className="bgTest" />
       <h2>Home</h2>
+      <img src={sample} alt="sample" className="spin" />
     </section>
   )
 }
