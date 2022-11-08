@@ -1,7 +1,9 @@
-# 폴더구조
+# React18.2 + TypeScript
+
+## 프로젝트구조
 
 ```
-react18_custom_webpack
+react18-ts
 ├─ .env.development
 ├─ .env.production
 ├─ .eslintrc
@@ -12,48 +14,14 @@ react18_custom_webpack
 ├─ package.json
 ├─ public
 │  └─ index.html
-├─ README.md
+│
 ├─ src
-│  ├─ api
-│  │  └─ HTTP.js
-│  ├─ Client.jsx
-│  ├─ index.js
-│  ├─ layout
-│  │  ├─ Footer
-│  │  │  └─ index.jsx
-│  │  ├─ Header
-│  │  │  └─ index.jsx
-│  │  └─ Main
-│  │     └─ index.jsx
-│  ├─ pages
-│  │  ├─ Home
-│  │  │  ├─ components
-│  │  │  └─ index.jsx
-│  │  ├─ HTTP
-│  │  │  ├─ components
-│  │  │  └─ index.jsx
-│  │  ├─ Menu2
-│  │  │  ├─ components
-│  │  │  └─ index.jsx
-│  │  ├─ Message
-│  │  │  ├─ components
-│  │  │  └─ index.jsx
-│  │  └─ Redux
-│  │     └─ index.jsx
-│  ├─ routes.js
-│  ├─ store
-│  │  ├─ Actions
-│  │  │  └─ actions.js
-│  │  ├─ Reducers
-│  │  │  └─ theme.js
-│  │  ├─ store.js
-│  │  └─ types.js
-│  ├─ styles
-│  │  └─ style.css
-│  └─ utils
-│     ├─ auth.js
-│     ├─ message.js
-│     └─ request.js
-└─ webpack.config.js
-
+│  ├─ App.tsx
+│  ├─ index.tsx
+│  └─ index.css
+│
+├─ babel.config
+├─ tsconfig.js
+├─ webpack.config.js
+└─ README.md
 ```
