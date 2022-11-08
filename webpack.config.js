@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 // 개발모드 유무
@@ -21,7 +22,7 @@ const config = {
   mode: isDev ? 'development' : 'production', // development, production
   devtool: !isDev ? 'hidden-source-map' : 'eval',
   entry: {
-    app: './src/index.js',
+    app: './src/index',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -31,31 +32,35 @@ const config = {
     assetModuleFilename: 'assets/images/[name]_[contenthash][ext]',
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
     alias: {
       '@': path.resolve(__dirname, './src/'),
-      api: path.resolve(__dirname, './src/api/'),
-      utils: path.resolve(__dirname, './src/utils/'),
-      common: path.resolve(__dirname, './src/common/'),
-      store: path.resolve(__dirname, './src/store/'),
-      pages: path.resolve(__dirname, './src/pages/'),
-      layout: path.resolve(__dirname, './src/layout/'),
-      images: path.resolve(__dirname, './src/images/'),
     },
   },
   module: {
     rules: [
       {
-        // 리액트 바벨 설정
-        test: /\.js/,
-        exclude: /node_modules/,
-        use: {
-          loader: require.resolve('babel-loader'),
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
-            plugins: [isDev && require.resolve('react-refresh/babel')].filter(Boolean),
+        test: /\.tsx?$/,
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                targets: { browsers: ['last 2 chrome versions'] },
+                debug: isDev,
+              },
+            ],
+            '@babel/preset-react',
+            '@babel/preset-typescript',
+          ],
+          env: {
+            development: {
+              plugins: [require.resolve('react-refresh/babel')],
+            },
           },
         },
+        exclude: path.join(__dirname, 'node_modules'),
       },
       {
         test: /\.css$/i,
@@ -69,36 +74,16 @@ const config = {
           },
         ],
       },
-      // file-loader: 폰트
-      // {
-      //   test: /\.(woff|woff2|eot|ttf|otf)$/,
-      //   use: {
-      //     loader: 'file-loader',
-      //     options: {
-      //       name: 'assets/fonts/[contenthash].[ext]',
-      //     },
-      //   },
-      // },
       {
         test: /\.(png|jpe?g|gif|svg|webp)$/,
         type: 'asset/resource',
       },
-      // file-loader: 이미지
-      // {
-      //   test: /\.(png|jpe?g|gif|svg|webp)$/,
-      //   use: {
-      //     loader: 'file-loader',
-      //     options: {
-      //       name: 'assets/images/[contenthash].[ext]',
-      //     },
-      //   },
-      // },
     ],
   },
   plugins: [
-    new Dotenv({
-      path: envPath,
-    }),
+    new Dotenv({ path: envPath }),
+    new webpack.EnvironmentPlugin({ NODE_ENV: isDev ? 'development' : 'production' }),
+    new ForkTsCheckerWebpackPlugin({ async: false }),
     new HtmlWebpackPlugin({
       template: './public/index.html', // 템플릿 설정
       templateParameters: {
@@ -110,7 +95,9 @@ const config = {
     new webpack.ProvidePlugin({
       React: 'react',
     }),
-    new ESLintPlugin(),
+    new ESLintPlugin({
+      extensions: ['ts', 'tsx'],
+    }),
   ],
   devServer: {
     // 개발 서버 설정
